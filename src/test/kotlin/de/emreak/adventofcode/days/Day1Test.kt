@@ -3,7 +3,6 @@ package de.emreak.adventofcode.days
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
-
 internal class Day1Test {
 
     @Test
