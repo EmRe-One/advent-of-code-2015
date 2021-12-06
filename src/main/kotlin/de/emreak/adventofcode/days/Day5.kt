@@ -33,4 +33,5 @@ object Day5 {
             condition1 && condition2
         }
     }
+
 }

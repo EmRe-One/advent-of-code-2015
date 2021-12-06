@@ -11,4 +11,5 @@ object Day$1 {
 
         return 0
     }
+
 }

@@ -36,4 +36,5 @@ object Day4 {
             number++
         }
     }
+
 }

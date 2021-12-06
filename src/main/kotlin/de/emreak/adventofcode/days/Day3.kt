@@ -70,4 +70,5 @@ object Day3 {
         }
         return housesCoords.size
     }
+
 }

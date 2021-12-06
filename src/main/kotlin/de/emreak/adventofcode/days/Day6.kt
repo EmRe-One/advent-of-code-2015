@@ -71,4 +71,5 @@ object Day6 {
             line.sum()
         }
     }
+
 }
