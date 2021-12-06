@@ -13,7 +13,8 @@ fun main() {
         1 -> solveDay1()
         2 -> solveDay2()
         3 -> solveDay3()
-// $1 
+4 -> solveDay4()
+// $1  
         else -> {
             throw IllegalArgumentException("Day $day is not implemented yet.")
         }
@@ -47,6 +48,16 @@ fun solveDay3() {
     println("Solution1: $solution1")
 
     val solution2 = Day3.part2(input)
+    println("Solution2: $solution2")
+}
+
+fun solveDay4() {
+    val input = AdventOfCodeUtils.readLines(filename = "day4.txt")
+
+    val solution1 = Day4.part1(input)
+    println("Solution1: $solution1")
+
+    val solution2 = Day4.part2(input)
     println("Solution2: $solution2")
 }
 
