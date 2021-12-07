@@ -5,7 +5,7 @@ import de.emreak.adventofcode.days.*
 
 fun main() {
 
-    val day = 7
+    val day = 8
 
     when (day) {
         1 -> solveDay1()
@@ -15,7 +15,7 @@ fun main() {
         5 -> solveDay5()
         6 -> solveDay6()
         7 -> solveDay7()
-8 -> solveDay8()
+        8 -> solveDay8()
 // $1      
         else -> {
             throw IllegalArgumentException("Day $day is not implemented yet.")
