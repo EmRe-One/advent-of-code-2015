@@ -1,8 +1,12 @@
+import mu.KotlinLogging
 import java.io.File
 import java.math.BigInteger
 import java.security.MessageDigest
 
 object AdventOfCodeUtils {
+
+    val logger = KotlinLogging.logger {}
+    val debugLogger = KotlinLogging.logger("de.emreak.adventofcode.debug")
 
     /**
      * Reads lines from the given input txt file.
