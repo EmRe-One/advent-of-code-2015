@@ -34,7 +34,7 @@ dependencies {
     implementation("ch.qos.logback:logback-classic:1.2.10")
     implementation("ch.qos.logback:logback-core:1.2.10")
     implementation("io.github.microutils:kotlin-logging-jvm:2.1.21")
-    implementation("tr.emreone:kotlin-utils:0.0.2")
+    implementation("tr.emreone:kotlin-utils:0.0.3")
     testImplementation(kotlin("test"))
 }
 
