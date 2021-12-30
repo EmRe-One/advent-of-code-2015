@@ -1,13 +1,11 @@
 package de.emreak.adventofcode.days
 
-import java.math.BigInteger
+import tr.emreone.utils.extensions.md5
 
 object Day4 {
 
-    fun md5(input: String): String {
-        val md = java.security.MessageDigest.getInstance("MD5")
-        val digest = md.digest(input.toByteArray())
-        val hexString = BigInteger(1, digest).toString(16)
+    private fun md5(input: String): String {
+        val hexString = input.md5()
         return hexString.padStart(32, '0')
     }
 

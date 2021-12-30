@@ -7,13 +7,13 @@ internal class Day$1Test {
 
     @Test
     fun part1() {
-        val input = AdventOfCodeUtils.readLines("src/test/resources", "day$1_example.txt")
+        val input = FileLoader.readLines("src/test/resources", "day$1_example.txt")
         assertEquals(-1, Day$1.part1(input), "Day$1, Part1 should be -1.")
     }
 
     @Test
     fun part2() {
-        val input = AdventOfCodeUtils.readLines("src/test/resources", "day$1_example.txt")
+        val input = FileLoader.readLines("src/test/resources", "day$1_example.txt")
         assertEquals(-1, Day$1.part2(input), "Day$1, Part2 should be -1.")
     }
 

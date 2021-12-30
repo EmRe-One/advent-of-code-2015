@@ -10,14 +10,6 @@ object Day6 {
         TOGGLE
     }
 
-    data class Instruction(
-        val command: Command,
-        val x: Int,
-        val y: Int,
-        val width: Int,
-        val height: Int
-    )
-
     fun part1(input: List<String>): Int {
         val regex = """^(turn on|turn off|toggle) (\d+),(\d+) through (\d+),(\d+)$""".toRegex()
         val lightsGrid = Array(1000) { IntArray(1000) { 0 } }

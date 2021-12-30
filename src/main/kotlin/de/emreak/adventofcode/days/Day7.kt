@@ -6,7 +6,6 @@ object Day7 {
     class Instruction(val variable: String, val operation: (vars: UShortArray) -> UShort, vararg val parameter: String) {
         var value: UShort? = null
 
-
         fun execute(vars: UShortArray): UShort {
             if (value == null) {
                 value = operation(vars)

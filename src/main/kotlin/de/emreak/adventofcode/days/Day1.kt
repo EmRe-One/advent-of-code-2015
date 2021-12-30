@@ -4,8 +4,7 @@ object Day1 {
 
     fun part1(input: String): Int {
         val groups = input.groupBy { it }
-
-        return (groups.get('(')?.size ?: 0) - (groups.get(')')?.size ?: 0)
+        return (groups['(']?.size ?: 0) - (groups[')']?.size ?: 0)
     }
 
     fun part2(input: String): Int {
