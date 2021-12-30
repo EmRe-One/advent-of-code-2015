@@ -120,7 +120,7 @@ fun solveDay9() {
 }
 
 fun solveDay10() {
-    val input = FileLoader.readLines(filename = "day10.txt")
+    val input = Resources.resourceAsText("day10.txt")
 
     val solution1 = Day10.part1(input)
     logger.info { "Solution1: $solution1" }

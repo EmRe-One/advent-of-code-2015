@@ -2,14 +2,21 @@ package de.emreak.adventofcode.days
 
 object Day10 {
 
-    fun part1(input: List<String>): Int {
+    fun part1(input: String, repeat: Int = 40): String {
+        var currentString = input
 
-        return 0
+        repeat(repeat) {
+            currentString = buildString {
+                var index = 0
+            }
+        }
+
+        return currentString
     }
 
-    fun part2(input: List<String>): Int {
+    fun part2(input: String): String {
 
-        return 0
+        return "0"
     }
 
 }
