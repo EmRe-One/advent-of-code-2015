@@ -3,6 +3,7 @@ package de.emreak.adventofcode
 import de.emreak.adventofcode.days.*
 import tr.emreone.utils.FileLoader
 import tr.emreone.utils.Logger.logger
+import tr.emreone.utils.Resources
 
 fun main() {
 
@@ -20,7 +21,8 @@ fun main() {
         7 -> solveDay7()
         8 -> solveDay8()
         9 -> solveDay9()
-// $1       
+        10 -> solveDay10()
+// $1        
         else -> {
             throw IllegalArgumentException("Day $day is not implemented yet.")
         }
@@ -108,12 +110,22 @@ fun solveDay8() {
 }
 
 fun solveDay9() {
-    val input = FileLoader.readLines(filename = "day9.txt")
+    val input = Resources.resourceAsList("day9.txt")
 
     val solution1 = Day9.part1(input)
     logger.info { "Solution1: $solution1" }
 
     val solution2 = Day9.part2(input)
+    logger.info { "Solution2: $solution2" }
+}
+
+fun solveDay10() {
+    val input = FileLoader.readLines(filename = "day10.txt")
+
+    val solution1 = Day10.part1(input)
+    logger.info { "Solution1: $solution1" }
+
+    val solution2 = Day10.part2(input)
     logger.info { "Solution2: $solution2" }
 }
 
