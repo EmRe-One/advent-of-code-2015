@@ -7,7 +7,7 @@ import tr.emreone.utils.Resources
 
 fun main() {
 
-    val day = 11
+    val day = 12
 
     logger.info { "Day $day: " }
 
@@ -23,7 +23,8 @@ fun main() {
         9 -> solveDay9()
         10 -> solveDay10()
         11 -> solveDay11()
-// $1         
+        12 -> solveDay12()
+// $1          
         else -> {
             throw IllegalArgumentException("Day $day is not implemented yet.")
         }
@@ -137,6 +138,16 @@ fun solveDay11() {
     logger.info { "Solution1: $solution1" }
 
     val solution2 = Day11.part2(input)
+    logger.info { "Solution2: $solution2" }
+}
+
+fun solveDay12() {
+    val input = Resources.resourceAsList("day12.txt")
+
+    val solution1 = Day12.part1(input)
+    logger.info { "Solution1: $solution1" }
+
+    val solution2 = Day12.part2(input)
     logger.info { "Solution2: $solution2" }
 }
 
