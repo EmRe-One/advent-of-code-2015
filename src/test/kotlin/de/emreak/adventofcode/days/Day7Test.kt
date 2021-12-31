@@ -2,13 +2,13 @@ package de.emreak.adventofcode.days
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import tr.emreone.utils.FileLoader
+import tr.emreone.utils.Resources
 
 internal class Day7Test {
 
     @Test
     fun part1() {
-        val input = FileLoader.readLines("src/test/resources", "day7_example.txt")
+        val input = Resources.resourceAsList("day7_example.txt")
         val variables = Day7.parseVariables(input)
 
         assertEquals(72.toUShort(), variables["d"], "Day7, Part1 - d should be 72.")
