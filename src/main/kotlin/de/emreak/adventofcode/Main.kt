@@ -1,7 +1,6 @@
 package de.emreak.adventofcode
 
 import de.emreak.adventofcode.days.*
-import tr.emreone.utils.FileLoader
 import tr.emreone.utils.Logger.logger
 import tr.emreone.utils.Resources
 
@@ -142,7 +141,7 @@ fun solveDay11() {
 }
 
 fun solveDay12() {
-    val input = Resources.resourceAsList("day12.txt")
+    val input = Resources.resourceAsText("day12.txt")
 
     val solution1 = Day12.part1(input)
     logger.info { "Solution1: $solution1" }

@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "1.6.0"
+    kotlin("plugin.serialization") version "1.6.10"
 }
 
 group = "de.emreak.adventofcode"
@@ -35,6 +36,7 @@ dependencies {
     implementation("ch.qos.logback:logback-core:1.2.10")
     implementation("io.github.microutils:kotlin-logging-jvm:2.1.21")
     implementation("tr.emreone:kotlin-utils:0.0.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
     testImplementation(kotlin("test"))
 }
 
