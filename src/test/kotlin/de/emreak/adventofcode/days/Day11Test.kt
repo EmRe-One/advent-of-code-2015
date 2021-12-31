@@ -7,15 +7,15 @@ import org.junit.jupiter.api.Test
 internal class Day11Test {
 
     @Test
-    fun part1() {
+    fun `test first example part 1`() {
         val input = Resources.resourceAsList("day11_example.txt")
-        assertEquals(-1, Day11.part1(input), "Day11, Part1 should be -1.")
+        assertEquals("abcdffaa", Day11.part1(input[0]), "Day11, Part1 - 1.Example should be abcdffaa.")
     }
 
     @Test
-    fun part2() {
+    fun `test second example part 1`() {
         val input = Resources.resourceAsList("day11_example.txt")
-        assertEquals(-1, Day11.part2(input), "Day11, Part2 should be -1.")
+        assertEquals("ghjaabcc", Day11.part1(input[1]), "Day11, Part1 - 2.Example should be ghjaabcc.")
     }
 
 }
