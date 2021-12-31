@@ -1,7 +1,5 @@
 package de.emreak.adventofcode.days
 
-import tr.emreone.utils.Logger.logger
-
 object Day11 {
 
     class Password(var password: String) {
