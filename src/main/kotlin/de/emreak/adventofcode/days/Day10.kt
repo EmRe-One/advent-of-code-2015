@@ -2,21 +2,38 @@ package de.emreak.adventofcode.days
 
 object Day10 {
 
-    fun part1(input: String, repeat: Int = 40): String {
+    private fun solve(input: String, repeat: Int): Int {
         var currentString = input
 
         repeat(repeat) {
             currentString = buildString {
+                val length = currentString.length
                 var index = 0
+
+                while(index < length) {
+                    val currentDigit = currentString[index]
+                    var counter = 1
+                    index++
+
+                    while(index < length && currentDigit == currentString[index]) {
+                        counter++
+                        index++
+                    }
+
+                    append("$counter$currentDigit")
+                }
             }
         }
 
-        return currentString
+        return currentString.length
     }
 
-    fun part2(input: String): String {
+    fun part1(input: String): Int {
+        return solve(input, 40)
+    }
 
-        return "0"
+    fun part2(input: String): Int {
+        return solve(input, 50)
     }
 
 }

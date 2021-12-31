@@ -7,7 +7,7 @@ import tr.emreone.utils.Resources
 
 fun main() {
 
-    val day = 9
+    val day = 10
 
     logger.info { "Day $day: " }
 
