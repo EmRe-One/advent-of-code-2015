@@ -14,7 +14,9 @@ internal class Day3Test {
 
     @Test
     fun part2() {
-        assertEquals(-1, Day3.part2(""), "Day3, Part2 should be -1.")
+        assertEquals(3, Day3.part2("^v"), "Day3, Part2 - 1. example should be 3.")
+        assertEquals(3, Day3.part2("^>v<"), "Day3, Part2 - 2. example should be 3.")
+        assertEquals(11, Day3.part2("^v^v^v^v^v"), "Day3, Part2 - 3. example should be 11.")
     }
 
 }
