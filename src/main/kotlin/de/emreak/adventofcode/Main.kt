@@ -3,10 +3,11 @@ package de.emreak.adventofcode
 import de.emreak.adventofcode.days.*
 import tr.emreone.utils.FileLoader
 import tr.emreone.utils.Logger.logger
+import tr.emreone.utils.Resources
 
 fun main() {
 
-    val day = 9
+    val day = 10
 
     logger.info { "Day $day: " }
 
@@ -20,7 +21,8 @@ fun main() {
         7 -> solveDay7()
         8 -> solveDay8()
         9 -> solveDay9()
-// $1       
+        10 -> solveDay10()
+// $1        
         else -> {
             throw IllegalArgumentException("Day $day is not implemented yet.")
         }
@@ -28,7 +30,7 @@ fun main() {
 }
 
 fun solveDay1() {
-    val input: String = FileLoader.readLines(filename = "day1.txt")[0]
+    val input: String = Resources.resourceAsText("day1.txt")
 
     val solution1 = Day1.part1(input)
     logger.info { "Solution1: $solution1" }
@@ -38,7 +40,7 @@ fun solveDay1() {
 }
 
 fun solveDay2() {
-    val input: List<String> = FileLoader.readLines(filename = "day2.txt")
+    val input: List<String> = Resources.resourceAsList("day2.txt")
 
     val solution1 = Day2.part1(input)
     logger.info { "Solution1: $solution1" }
@@ -48,7 +50,7 @@ fun solveDay2() {
 }
 
 fun solveDay3() {
-    val input = FileLoader.readLines(filename = "day3.txt")[0]
+    val input = Resources.resourceAsText("day3.txt")
 
     val solution1 = Day3.part1(input)
     logger.info { "Solution1: $solution1" }
@@ -58,7 +60,7 @@ fun solveDay3() {
 }
 
 fun solveDay4() {
-    val input = FileLoader.readLines(filename = "day4.txt")[0]
+    val input = Resources.resourceAsText("day4.txt")
 
     val solution1 = Day4.part1(input)
     logger.info { "Solution1: $solution1" }
@@ -68,7 +70,7 @@ fun solveDay4() {
 }
 
 fun solveDay5() {
-    val input = FileLoader.readLines(filename = "day5.txt")
+    val input = Resources.resourceAsList("day5.txt")
 
     val solution1 = Day5.part1(input)
     logger.info { "Solution1: $solution1" }
@@ -78,7 +80,7 @@ fun solveDay5() {
 }
 
 fun solveDay6() {
-    val input = FileLoader.readLines(filename = "day6.txt")
+    val input = Resources.resourceAsList("day6.txt")
 
     val solution1 = Day6.part1(input)
     logger.info { "Solution1: $solution1" }
@@ -88,7 +90,7 @@ fun solveDay6() {
 }
 
 fun solveDay7() {
-    val input = FileLoader.readLines(filename = "day7.txt")
+    val input = Resources.resourceAsList("day7.txt")
 
     val solution1 = Day7.part1(input)
     logger.info { "Solution1: $solution1" }
@@ -98,7 +100,7 @@ fun solveDay7() {
 }
 
 fun solveDay8() {
-    val input = FileLoader.readLines(filename = "day8.txt")
+    val input = Resources.resourceAsList("day8.txt")
 
     val solution1 = Day8.part1(input)
     logger.info { "Solution1: $solution1" }
@@ -108,12 +110,22 @@ fun solveDay8() {
 }
 
 fun solveDay9() {
-    val input = FileLoader.readLines(filename = "day9.txt")
+    val input = Resources.resourceAsList("day9.txt")
 
     val solution1 = Day9.part1(input)
     logger.info { "Solution1: $solution1" }
 
     val solution2 = Day9.part2(input)
+    logger.info { "Solution2: $solution2" }
+}
+
+fun solveDay10() {
+    val input = Resources.resourceAsText("day10.txt")
+
+    val solution1 = Day10.part1(input)
+    logger.info { "Solution1: $solution1" }
+
+    val solution2 = Day10.part2(input)
     logger.info { "Solution2: $solution2" }
 }
 

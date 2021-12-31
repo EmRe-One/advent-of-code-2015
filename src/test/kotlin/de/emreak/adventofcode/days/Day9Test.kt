@@ -15,7 +15,7 @@ internal class Day9Test {
 
     @Test
     fun `test example part 2`() {
-        val input = FileLoader.readLines("src/test/resources", "day9_example.txt")
+        val input = Resources.resourceAsList("day9_example.txt")
         assertEquals(982, Day9.part2(input), "Day9, Part2 should be 982.")
     }
 
