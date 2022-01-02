@@ -3,8 +3,8 @@
 |                 |                                                                 |
 |-----------------|-----------------------------------------------------------------|
 | Written in      | ![Kotlin](https://img.shields.io/badge/Kotlin-grey?logo=Kotlin) |
-| Finish Level    | ![](https://img.shields.io/badge/📅%20days-12-blue)             |
-| Collected Stars | ![](https://img.shields.io/badge/⭐%20stars-24-green)            |
+| Finish Level    | ![](https://img.shields.io/badge/📅%20days-13-blue)             |
+| Collected Stars | ![](https://img.shields.io/badge/⭐%20stars-26-green)            |
 
 ## Intro
 [Homepage of Advent-of-Code 2015](https://adventofcode.com/2015) 
@@ -25,5 +25,5 @@
 | [Day 10](https://adventofcode.com/2015/day/10) | [Day10Test.kt](https://github.com/EmRe-One/advent-of-code-2015/blob/master/src/test/kotlin/de/emreak/adventofcode/days/Day10Test.kt) | [Day10.kt](https://github.com/EmRe-One/advent-of-code-2015/blob/master/src/main/kotlin/de/emreak/adventofcode/days/Day10.kt) |   ⭐    |   ⭐    |
 | [Day 11](https://adventofcode.com/2015/day/11) | [Day11Test.kt](https://github.com/EmRe-One/advent-of-code-2015/blob/master/src/test/kotlin/de/emreak/adventofcode/days/Day11Test.kt) | [Day11.kt](https://github.com/EmRe-One/advent-of-code-2015/blob/master/src/main/kotlin/de/emreak/adventofcode/days/Day11.kt) |   ⭐    |   ⭐    |
 | [Day 12](https://adventofcode.com/2015/day/12) | [Day12Test.kt](https://github.com/EmRe-One/advent-of-code-2015/blob/master/src/test/kotlin/de/emreak/adventofcode/days/Day12Test.kt) | [Day12.kt](https://github.com/EmRe-One/advent-of-code-2015/blob/master/src/main/kotlin/de/emreak/adventofcode/days/Day12.kt) |   ⭐    |   ⭐    |
-| [Day 13](https://adventofcode.com/2015/day/13) | [Day13Test.kt](https://github.com/EmRe-One/advent-of-code-2015/blob/master/src/test/kotlin/de/emreak/adventofcode/days/Day13Test.kt) | [Day13.kt](https://github.com/EmRe-One/advent-of-code-2015/blob/master/src/main/kotlin/de/emreak/adventofcode/days/Day13.kt) |
+| [Day 13](https://adventofcode.com/2015/day/13) | [Day13Test.kt](https://github.com/EmRe-One/advent-of-code-2015/blob/master/src/test/kotlin/de/emreak/adventofcode/days/Day13Test.kt) | [Day13.kt](https://github.com/EmRe-One/advent-of-code-2015/blob/master/src/main/kotlin/de/emreak/adventofcode/days/Day13.kt) |   ⭐    |   ⭐    |
 <!-- $1 -->

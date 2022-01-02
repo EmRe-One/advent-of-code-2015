@@ -52,19 +52,37 @@ object Day13 {
             }
         }
 
-        fun findOptimalSeatingArrangement(): List<String> {
+        fun addMe() {
+            val me = Person("Me")
+            this.persons.values.forEach { person ->
+                person.addPossibleNeighbor("Me", 0)
+                me.addPossibleNeighbor(person.name, 0)
+            }
+            this.persons["Me"] = me
+        }
+
+        fun calcHappinessOfSeating(seating: List<Pair<String, Person>>): Int {
+            var happinessSum = 0
+
+            // beacause of the circularity, we need to add the first person to the end
+            // 1 - 2 - 3 - ... - n - 1
+            val modifiedSeating = seating + seating.first()
+
+            modifiedSeating.windowed(2).forEach { (p1, p2) ->
+                happinessSum += p1.second.getHappinessTo(p2.first) + p2.second.getHappinessTo(p1.first)
+            }
+
+            logger.debug { "Seating arrangement: ${modifiedSeating.map { it.first }.joinToString(", ")}, happiness: $happinessSum" }
+
+            return happinessSum
+        }
+
+        fun findOptimalSeatingArrangement(): List<Pair<String, Person>> {
             val optimalSeating = this.persons.toList()
                 .permutations()
-                .minByOrNull {
-                    var happinessSum = 0
-                    it.windowed(2).forEach { (p1, p2) ->
-                        happinessSum += p1.second.getHappinessTo(p2.first) + p2.second.getHappinessTo(p1.first)
-                    }
-                    happinessSum += it.first().second.getHappinessTo(it.last().first)
-                    happinessSum += it.last().second.getHappinessTo(it.first().first)
-
-                    happinessSum
-                }?.map { it.first }
+                .maxByOrNull {
+                    calcHappinessOfSeating(it)
+                }
 
             return optimalSeating ?: emptyList()
         }
@@ -73,12 +91,15 @@ object Day13 {
     fun part1(input: List<String>): Int {
         val table = CircularTable(input)
         val optimalSeating = table.findOptimalSeatingArrangement()
-        return optimalSeating.size
+        return table.calcHappinessOfSeating(optimalSeating)
     }
 
     fun part2(input: List<String>): Int {
+        val table = CircularTable(input)
+        table.addMe()
 
-        return 0
+        val optimalSeating = table.findOptimalSeatingArrangement()
+        return table.calcHappinessOfSeating(optimalSeating)
     }
 
 }
