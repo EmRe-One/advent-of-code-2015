@@ -11,13 +11,16 @@ object Day15 {
      * calories     how many calories it adds to the cookie
      *
      */
-    class Ingredient(val name: String, val capacity: Int, val durability: Int, val flavor: Int,
-                     val texture: Int, val calories: Int) {
+    class Ingredient(
+        val name: String, val capacity: Int, val durability: Int, val flavor: Int,
+        val texture: Int, val calories: Int
+    ) {
 
         companion object {
 
             fun parse(line: String): Ingredient {
-                val pattern = """^(\w+): capacity (-?\d+), durability (-?\d+), flavor (-?\d+), texture (-?\d+), calories (\d+)""".toRegex()
+                val pattern =
+                    """^(\w+): capacity (-?\d+), durability (-?\d+), flavor (-?\d+), texture (-?\d+), calories (\d+)""".toRegex()
 
                 val (n, c, d, f, t, cal) = pattern.matchEntire(line)!!.destructured
 
@@ -27,8 +30,37 @@ object Day15 {
         }
     }
 
-    fun part1(input: List<String>): Int {
+    /**
+     * ingredients: a, b, c, d, e
+     * teaspoon : 100
+     *
+     * method(100, ingredients, teaspoons) {
+     *
+     *     for (a in 1..100) {
+     *         teaspoons[] = a
+     *         a + method(100 - a, ingredients.minus(a))
+     *     }
+     * }
+     *
+     */
+    fun method(missingTeaspoon: Int, ingredients: List<Ingredient>, teaspoon: MutableMap<String, Int>) {
 
+    }
+
+
+    fun part1(input: List<String>): Int {
+        val ingredients = input.map { Ingredient.parse(it) }
+        val allPossibleReceipts = mutableListOf<Ingredient>()
+
+        val ingredientNames = ingredients.map { it.name }.toSet()
+
+        for(a in 1..100) {
+            for(b in 1..(100 - a)) {
+                for(c in 1..(100 - a - b)) {
+                    //
+                }
+            }
+        }
         return 0
     }
 
