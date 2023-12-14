@@ -2,7 +2,7 @@ package tr.emreone.adventofcode.days
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import tr.emreone.utils.FileLoader
+import tr.emreone.kotlin_utils.FileLoader
 import tr.emreone.utils.Resources
 
 internal class Day9Test {

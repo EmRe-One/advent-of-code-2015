@@ -72,7 +72,11 @@ object Day13 {
                 happinessSum += p1.second.getHappinessTo(p2.first) + p2.second.getHappinessTo(p1.first)
             }
 
-            logger.debug { "Seating arrangement: ${modifiedSeating.map { it.first }.joinToString(", ")}, happiness: $happinessSum" }
+            logger.debug {
+                "Seating arrangement: ${
+                    modifiedSeating.map { it.first }.joinToString(", ")
+                }, happiness: $happinessSum"
+            }
 
             return happinessSum
         }
