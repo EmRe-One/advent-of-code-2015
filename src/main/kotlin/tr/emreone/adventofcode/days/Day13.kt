@@ -1,7 +1,7 @@
 package tr.emreone.adventofcode.days
 
-import tr.emreone.utils.Logger.logger
-import tr.emreone.utils.extensions.permutations
+import tr.emreone.kotlin_utils.Logger.logger
+import tr.emreone.kotlin_utils.extensions.permutations
 
 object Day13 {
 

@@ -57,7 +57,7 @@ dependencies {
     implementation("com.github.ajalt.mordant:mordant:2.2.0")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
 
-    implementation("tr.emreone:kotlin-utils:0.2.3")
+    implementation("tr.emreone:kotlin-utils:0.3.4")
 
     testImplementation(kotlin("test"))
 }
@@ -75,83 +75,4 @@ fun getValue(key: String, filename: String = "../keys.properties"): String {
     }
 
     return items[key] ?: throw IllegalArgumentException("Key $key not found")
-}
-
-tasks.register("prepareNextDay") {
-    var day = 1
-    var packageId = ""
-
-    doFirst {
-        day = properties["day"]?.toString()?.toInt() ?: 0
-        packageId = properties["packageId"]?.toString() ?: "tr.emreone.adventofcode"
-    }
-
-    doLast {
-        val nextDay = day.toString().padStart(2, '0')
-        val withTest = true
-        val packageIdPath = packageId.replace(".", "/")
-
-        val mainFile = "${projectDir}/src/main/kotlin/${packageIdPath}/Main.kt"
-        val readmeFile = "${projectDir}/README.md"
-        val newSrcFile = "${projectDir}/src/main/kotlin/${packageIdPath}/days/Day${nextDay}.kt"
-        val newTestFile = "${projectDir}/src/test/kotlin/${packageIdPath}/days/Day${nextDay}Test.kt"
-
-        if (file(newSrcFile).exists()) {
-            println("WARNING: Files for Day$nextDay already exists. Do you really want to overwrite it?")
-        } else {
-            file(newSrcFile).writeText(
-                file("${projectDir}/template/DayX.kt")
-                    .readText()
-                    .replace("$1", nextDay)
-            )
-
-            file("${projectDir}/src/main/resources/day${nextDay}.txt")
-                .writeText("")
-
-            file(mainFile).writeText(
-                file(mainFile).readText()
-                    .replace(
-                        "// $1", """
-                        |    fun solveDay${nextDay}() {
-                        |        val input = Resources.resourceAsList(fileName = "day${nextDay}.txt")
-                        |
-                        |        val (part1, elapsedTime1) = measureTimedValue {
-                        |            Day${nextDay}.part1(input)
-                        |        }
-                        |        logger.info { "Part1 solved in ${"$"}elapsedTime1:" }
-                        |        logger.info { part1 }
-                        |
-                        |        val (part2, elapsedTime2) = measureTimedValue {
-                        |            Day${nextDay}.part2(input)
-                        |        }
-                        |        logger.info { "Part2 solved in ${"$"}elapsedTime2:" }
-                        |        logger.info { part2 }
-                        |    }
-                        |// ${"$1"}
-                        """.trimMargin()
-                    )
-            )
-
-            file(readmeFile).writeText(
-                file(readmeFile).readText()
-                    .replace(
-                        "<!-- $1 -->", """
-                            | [Day ${nextDay}](https://adventofcode.com/2015/day/${day}) | [Day${nextDay}Test.kt](./src/test/kotlin/tr/emreone/adventofcode/days/Day${nextDay}Test.kt) | [Day${nextDay}.kt](./src/main/kotlin/tr/emreone/adventofcode/days/Day${nextDay}.kt) | ![Day ${nextDay}](./aoc_tiles/2023/${nextDay}.png) |
-                            ${"<!-- $1 -->"}
-                        """.trimIndent()
-                    )
-            )
-
-            if (withTest) {
-                file(newTestFile).writeText(
-                    file("${projectDir}/template/DayXTest.kt")
-                        .readText()
-                        .replace("$1", nextDay)
-                )
-
-                file("${projectDir}/src/test/resources/day${nextDay}_example.txt")
-                    .writeText("")
-            }
-        }
-    }
 }

@@ -1,6 +1,6 @@
 package tr.emreone.adventofcode.days
 
-import tr.emreone.utils.extensions.md5
+import tr.emreone.kotlin_utils.extensions.md5
 
 object Day4 {
 
